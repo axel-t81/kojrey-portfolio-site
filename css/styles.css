@@ -52,6 +52,13 @@ body {
     margin-bottom: 1.5rem;
 }
 
+    
+.sublead {
+    margin-top: 1.5rem;
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
 /* About Section */
 #about {
     background-color: #f8f9fa;
