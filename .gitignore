@@ -42,3 +42,4 @@ build/
 
 # Optional: Local development server
 .serve/
+serve.py

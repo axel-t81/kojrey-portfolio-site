@@ -12,17 +12,15 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Navbar background change on scroll
-window.addEventListener('scroll', function() {
-    const navbar = document.querySelector('.navbar');
-    if (window.scrollY > 50) {
-        navbar.classList.add('bg-dark');
-        navbar.classList.remove('bg-transparent');
-    } else {
-        navbar.classList.remove('bg-dark');
-        navbar.classList.add('bg-transparent');
-    }
-});
+// Basic form handling
+const contactForm = document.getElementById('contactForm');
+if (contactForm) {
+    contactForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        alert('Thank you for your message! I will get back to you soon.');
+        this.reset();
+    });
+}
 
 // Fade-in animation for sections
 const fadeElements = document.querySelectorAll('.fade-in');
@@ -43,26 +41,6 @@ fadeInOnScroll();
 
 // Check for elements in view on scroll
 window.addEventListener('scroll', fadeInOnScroll);
-
-// Contact form handling
-const contactForm = document.getElementById('contactForm');
-if (contactForm) {
-    contactForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        // Get form data
-        const formData = new FormData(this);
-        const formObject = {};
-        formData.forEach((value, key) => {
-            formObject[key] = value;
-        });
-        
-        // Here you would typically send the form data to a server
-        // For now, we'll just show a success message
-        alert('Thank you for your message! I will get back to you soon.');
-        this.reset();
-    });
-}
 
 // Add fade-in class to sections
 document.addEventListener('DOMContentLoaded', function() {
