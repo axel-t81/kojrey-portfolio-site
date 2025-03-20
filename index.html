@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-KNK06VQ1HN"></script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-KNK06VQ1HN');
+        </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kojrey's Portfolio</title>
@@ -15,7 +24,10 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="#home">Kojrey's Portfolio</a>
+            <a class="navbar-brand" href="#home">
+                <img src="assets/kojrey-memoji.png" alt="Kojrey Memoji" class="navbar-brand-img me-2">
+                Kojrey's Portfolio
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -31,7 +43,7 @@
                         <a class="nav-link" href="#projects">Projects</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#contact">Contact</a>
+                        <a class="nav-link" href="#contact">Say Hello</a>
                     </li>
                 </ul>
             </div>
@@ -45,7 +57,7 @@
                 <div class="col-12 text-center">
                     <h1 class="display-4">Welcome to My Portfolio</h1>
                     <p class="lead">I'm a relatively new developer and aspiring software engineer, after career changing from accounting and bookkeeping.</p>
-                    <a href="#projects" class="btn btn-primary btn-lg">View My Work Below</a>
+                    <a href="#projects" class="btn btn-dark btn-lg">View My Work Below</a>
                     <p class="sublead">Note: This portfolio site is built with HTML, CSS, and JavaScripts, and uses Bootstrap 5. It is hosted on GitHub Pages.
                         <br>...And yes, it is currently under construction.
                     </p>
@@ -57,23 +69,41 @@
     <!-- About Section -->
     <section id="about" class="py-5">
         <div class="container">
-            <h2 class="text-center mb-5">About Me</h2>
+            <h2 class="text-center mb-5">About Kojrey</h2>
             <div class="row">
                 <div class="col-md-6">
                     <img src="assets/kojrey_icon-min.png" alt="Kojrey Icon" class="img-fluid rounded">
                 </div>
                 <div class="col-md-6">
-                    <h3>Who I Am</h3>
-                    <p>Intro coming soon. My background, skills, and what makes me unique.</p>
+                    <h4>Tech Interests</h4>
+                    <ul>
+                        <li>Web Development and Web Applications</li>
+                        <li>Big Data and SQL</li>
+                        <li>AI/ML, Generative AI, and Computer Vision</li>
+                        <li>Algorithmic Trading or Asset Management</li>
+                        <li>FinTech, PropTech, or EdTech</li>
+                        <li>eCommerce and/or Marketplace Apps</li>
+                        <li>Sports Industry, Sports Analytics, or Fitness Industry</li>
+                    </ul>
+                    <h4>Qualifications and Professional Associations</h4>
+                    <ul>
+                        <li>2024-Present: Student Member of IEEE</li>
+                        <li>2024-Present: Associate Member of Australian Computer Society (ACS)</li>
+                        <li>2024-Present: (Incomplete) Masters of IT, at UNE</li>
+                        <li>2017-2018: Passed Level 1 CFA Exam, at CFA Institute</li>
+                        <li>2017-2018: Graduate Certificate in Financial Planning, at Kaplan Professional</li>
+                        <li>2007-2016: Bachelor of Business, at UTS (Accounting major, IT sub-major)</li>
+                    </ul>
                     <div class="skills mb-4">
                         <h4>Skills</h4>
                         <div class="skill-tags">
-                            <span class="badge bg-primary">HTML5</span>
-                            <span class="badge bg-primary">CSS3</span>
-                            <span class="badge bg-primary">Python</span>
-                            <span class="badge bg-primary">Django</span>
-                            <span class="badge bg-primary">SQL</span>
-                            <span class="badge bg-primary">GitHub</span>
+                            <span class="badge bg-dark">HTML5</span>
+                            <span class="badge bg-dark">CSS3</span>
+                            <span class="badge bg-dark">Python</span>
+                            <span class="badge bg-dark">Django</span>
+                            <span class="badge bg-dark">SQL</span>
+                            <span class="badge bg-dark">PostgreSQL</span>
+                            <span class="badge bg-dark">GitHub</span>
                             
                             <!-- Add more skills as needed -->
                         </div>
@@ -95,7 +125,6 @@
                             </a>
                         </div>
                     </div>
-                </div>
             </div>
         </div>
     </section>
@@ -112,7 +141,7 @@
                         <div class="card-body">
                             <h5 class="card-title">Earnings Calendar to Google Calendar</h5>
                             <p class="card-text">Description coming soon.</p>
-                            <a href="#" class="btn btn-primary">View Project</a>
+                            <a href="#" class="btn btn-dark">View Project</a>
                         </div>
                     </div>
                 </div>
@@ -123,7 +152,7 @@
                         <div class="card-body">
                             <h5 class="card-title">Accofina</h5>
                             <p class="card-text">Description coming soon.</p>
-                            <a href="#" class="btn btn-primary">View Project</a>
+                            <a href="#" class="btn btn-dark">View Project</a>
                         </div>
                     </div>
                 </div>
@@ -134,7 +163,7 @@
                         <div class="card-body">
                             <h5 class="card-title">Ethical Social Work Services</h5>
                             <p class="card-text">Description coming soon.</p>
-                            <a href="#" class="btn btn-primary">View Project</a>
+                            <a href="#" class="btn btn-dark">View Project</a>
                         </div>
                     </div>
                 </div>
@@ -158,7 +187,7 @@
                         <div class="mb-3">
                             <textarea class="form-control" rows="5" placeholder="Your Message" required></textarea>
                         </div>
-                        <button type="submit" class="btn btn-primary">Send Message</button>
+                        <button type="submit" class="btn btn-dark">Send Message</button>
                     </form>
                 </div>
             </div>
@@ -166,7 +195,7 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-dark text-white py-4">
+    <footer class="text-white py-4">
         <div class="container text-center">
             <div class="social-links mb-3">
                 <a href="https://github.com/axel-t81" class="text-white me-3"><i class="fab fa-github"></i></a>
