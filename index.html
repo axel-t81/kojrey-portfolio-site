@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
-    <title>Kojrey's Portfolio Site</title>
-    <link rel="icon" type="image/x-icon" href="/img/favicon2.png">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Kojrey | Accountant to Engineer</title>
+    <link rel="icon" type="image/x-icon" href="/img/favicon2.png">
     
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-KNK06VQ1HN"></script>
@@ -16,228 +16,425 @@
     gtag('config', 'G-KNK06VQ1HN');
     </script>
 
-    <link rel="stylesheet" href="styles.css">
-    <!-- Two lines below are from Contact Form building guide at https://www.youtube.com/watch?v=el4ODMN4bYk&t=2s
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    Okay this looks like it will take the longest and should be last Task -->
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Space Grotesk', 'sans-serif'],
+                    },
+                    colors: {
+                        'brand-dark': '#1e293b', /* Slate 800 for high contrast text */
+                        'brand-accent': '#2563eb', /* Royal Blue */
+                        'brand-secondary': '#f59e0b', /* Amber/Gold for subtle highlights */
+                        'bg-light': '#ffffff',
+                        'bg-alt': '#f8fafc', /* Slate 50 */
+                    }
+                }
+            }
+        }
+    </script>
 
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="global">
+<body class="bg-bg-light text-slate-800 font-sans antialiased selection:bg-brand-accent selection:text-white">
 
-<main class="page">
-
-    <nav>
-
-        <ul class="navbar">
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#quals">Quals</a></li>
-            <li id="rhs"><a href="#contact">Contact</a></li>
-        </ul>
-
-    </nav>
-
-    <section class="welcome-section">
-            <div class="flex-child-1"><img class="memoji" alt="Kojrey's Memoji" src="img/kojrey-memoji.png"></div>
-            <div class="flex-child-2"></div><h1 class="title">Kojrey's Portfolio Site</h1></div>
-    </section>
-
-    <section class="main-content">
-
-        <section id="projects">
-
-            <h1>A directory of Projects:</h1>
-
-            <h4>Completed</h4>
-
-            <h4>In Progress</h4>
-
-            <div class="grid-container">
-
-                <div class="project-tile">
-                    <strong>Coming soon...</strong>
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-white/90 backdrop-blur-md border-b border-slate-100 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex-shrink-0">
+                    <a href="#" class="font-display font-bold text-2xl text-slate-900 tracking-tight hover:text-brand-accent transition-colors">
+                        Kojrey.
+                    </a>
                 </div>
-
-                <div class="project-tile">
-                    <strong>Coming soon...</strong>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#projects" class="text-slate-600 hover:text-slate-900 px-3 py-2 text-sm font-medium transition-colors">Projects</a>
+                        <a href="#about" class="text-slate-600 hover:text-slate-900 px-3 py-2 text-sm font-medium transition-colors">About</a>
+                        <a href="#quals" class="text-slate-600 hover:text-slate-900 px-3 py-2 text-sm font-medium transition-colors">Quals</a>
+                        <a href="#contact" class="bg-slate-900 text-white hover:bg-slate-800 px-5 py-2.5 rounded-full text-sm font-medium transition-all shadow-sm hover:shadow-md">Contact</a>
+                    </div>
                 </div>
-
-                <div class="project-tile">
-                    <strong>Coming soon...</strong>
-                </div>
-
-                <div class="project-tile">
-                    <strong>Coming soon...</strong>
+                <div class="-mr-2 flex md:hidden">
+                    <button type="button" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" class="inline-flex items-center justify-center p-2 rounded-md text-slate-400 hover:text-slate-600 focus:outline-none">
+                        <span class="sr-only">Open main menu</span>
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
                 </div>
             </div>
-
-        </section>
-
-        <hr>
-
-        <section id="about">
-
-            <h1>About Kojrey:</h1>
-
-            <p>
-                <img class="dogs" alt="Kojrey ico" src="img/kojrey_icon.png">
-                Kojrey is an ex <strong>bookkeeper (BAS Agent)</strong> and ex <strong>qualified accountant (AIPA AFA)</strong>. In 2024 he made the decision to make a major career change.
-                Aiming to start a career in software engineering, Kojrey shut down his small accounting 
-                firm and enrolled in a <strong>Graduate Diploma in IT at the Univerity of New England (UNE)</strong>.
-                Next year he will assess whether he wishes to extend the GradDip and complete the full Masters degree.
-            </p>
-
-            <p>
-                His technical interests include <strong>blockchain</strong> technology (specifically <strong>Ethereum</strong> development) and, more recently, 
-                finding out more about <strong>generative AI</strong> and how other <strong>machine and deep learning models</strong> can be utilised in financial applications.
-            </p>
-
-            <p>
-                But these more advanced fields are longer term goals, and at present his current focus is basic <strong>Python</strong> and <strong>Java</strong> (both being studied at UNE),
-                basic <strong>Solidity</strong>, and general the front end foundations of <strong>HTML, CSS and JavaScript</strong>.
-            </p>
-
-            <p>
-                Kojrey lives in Australia with his partner and their two dogs, and is a dual Australian/Irish citizen.
-            </p>
-
-        </section>
-
-        <hr>
-
-    <div class="row">
-        <section id="quals" class="column left">
-
-            <h1>Qualifications and Education:</h1>
-
-            <h4>Completed</h4>
-
-                <i>Technology</i>
-
-                        <ul>
-                            <li><b>2024</b> Cyfrin Updraft: Blockchain Basics</li>
-                            <li><b>2024</b> Chainlink Bootcamp (April, English)</li>
-                            <li><b>2022</b> Coursera Project Work: Postman - Intro to APIs (without coding)</li>
-                            <li><b>2018</b> Coursera: IBM Blockchain Foundation for Developers</li>
-                            <li><b>2014</b> UTS: Programming Fundamentals (Autumn, 48023)</li>
-                            <li><b>2009</b> UTS: Networking Essentials (Autumn, 31270)</li>
-                            <li><b>2008</b> UTS: Database Fundamentals (Spring, 31271)</li>
-                            <li><b>2007</b> UTS: Communication for IT Professionals (Autumn, 31265)</li>
-                        </ul>    
-
-                <i>Other</i>
-
-                <p>
-                    <ul>
-                        <li><b>2020</b> Certified Xero Advisor</li>
-                        <li><b>2020</b> Certified (Advanced) Quickbooks Online ProAdvisor</li>
-                        <li><b>2020</b> Tax Practioners Board (TPB) - Registered BAS Agent</li>
-                        <li><b>2020</b> Financial Education Professional - RG146 CFA Gap Program, and RG146 Compliant in:</li>
-                        <ol>
-                            <li>Securities</li>
-                            <li>Derivatives</li>
-                            <li>Managed Investments</li>
-                            <li>Foreign Exchange</li>
-                        </ol>
-                        <li><b>2018</b> Level 1 CFA Exam - Passed, and scored above the 90th percentile in:</li>
-                        <ul>
-                            <li>Portfolio Management</li>
-                            <li>Alternative Investments and Derivatives</li>
-                        </ul>
-                        <li><b>2018</b> Kaplan Professional - Graduate Certificate in Financial Planning, and RG146 Compliant in:</li>
-                        <ol>
-                            <li>Generic Knowledge</li>
-                            <li>Financial Planning</li>
-                            <li>Superannuation</li>
-                            <li>Insurance</li>
-                        </ol>
-                        <li><b>2016</b> University of Technology (UTS) - Bachelor of Business, with Disctinction</li>
-                        <ul>
-                            <li>Accounting major</li>
-                            <li>Information Technology sub-major</li>
-                        </ul>
-                    </ul>
-                </p>
-
-            <h4>In Progress</h4>
-
-                <i>Technology</i>
-
-                    <p>
-                        <ul>
-                            <li><b>2024</b> Univerity of New England (UNE) - Graduate Diploma in Information Technology</li>
-                            <ul>
-                                <li>Introduction to Programming and the UNIX Environment (Trimester 2, COSC110)</li>
-                                <li>Object Oriented Programming (Trimester 2, COSC120)</li>
-                            </ul>
-                        </ul>
-                    </p>
-
-                <i>Other</i>
-
-                    <ul>
-                            <li>None</li>
-                    </ul>    
-        </section>
-
-        <section class="column right">
-            <!-- Test parallax 
-            <div class="parallax">
-                <p>Test</p>
-            </div>
-            here-->
-        </section>
-
-    </div>
-
-    </section>
-
-    <section id="contact">
-
-        <section class="sayhello">
-            <div class="flex-child-1"><img class="memoji" alt="Coffee and Notepad" src="img/coffee-notepad.png"></div>
-            <div class="flex-child-2"></div><h1 class="title">Get in Contact</h1></div>
-        </section>
-
-        <h3>Let's connect online</h3>
-
-        <div class="profile-link">
-            <a href="https://github.com/axel-t81" rel="noopener" target="_blank"><img src="img/github.png" alt="GitHub link" class="icon"></a>
-            <a href="https://www.linkedin.com/in/axeltracy" rel="noopener" target="_blank"><img src="img/linkedin.png" alt="LinkedIn link" class="icon"></a>
-            <a href="https://x.com/kojrey_codes" rel="noopener" target="_blank"><img src="img/twitter-x.png" alt="Twitter/X link" class="icon"></a>
-            <a href="https://stackoverflow.com/users/24905107/kojrey" rel="noopener" target="_blank"><img src="img/stackoverflow.png" alt="Stackoverflow link" class="icon"></a>
-            <a href="Discord_user:kojrey_65351" rel="noopener" target="_blank"><img src="img/discord.png" alt="Discord username" class="icon"></a>
         </div>
 
-        <h3>Let's connect IRL</h3>
-
-        <section>
-            <div class="flex-child-3">
-                <h4>Want to chat on Google Meet?</h4>
-                <p>Book a meeting via Calendly below:</p>
-                <!-- Calendly inline widget begin -->
-                <div class="calendly-inline-widget" data-url="https://calendly.com/kojrey-kojreycodes/30min?hide_event_type_details=1&hide_gdpr_banner=1" style="min-width:320px;height:700px;"></div>
-                <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
-                <!-- Calendly inline widget end -->
+        <!-- Mobile menu -->
+        <div class="hidden md:hidden bg-white border-t border-slate-100" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#projects" class="text-slate-600 hover:text-slate-900 block px-3 py-2 text-base font-medium">Projects</a>
+                <a href="#about" class="text-slate-600 hover:text-slate-900 block px-3 py-2 text-base font-medium">About</a>
+                <a href="#quals" class="text-slate-600 hover:text-slate-900 block px-3 py-2 text-base font-medium">Quals</a>
+                <a href="#contact" class="text-brand-accent font-medium block px-3 py-2 text-base">Contact</a>
             </div>
-            <div class="flex-child-4">
+        </div>
+    </nav>
 
+    <main>
+        <!-- Hero Section -->
+        <section class="min-h-[90vh] flex items-center justify-center pt-20 relative bg-bg-light">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div class="order-2 md:order-1 text-center md:text-left space-y-8 fade-in">
+                    <span class="inline-block text-brand-accent font-medium tracking-wide text-sm uppercase">Portfolio 2026</span>
+                    <h1 class="text-5xl md:text-7xl font-display font-bold leading-tight text-slate-900">
+                        Accounting to <br>
+                        <span class="relative inline-block">
+                            <span class="relative z-10">Engineering</span>
+                            <span class="absolute bottom-2 left-0 w-full h-3 bg-brand-accent/20 -z-0"></span>
+                        </span>
+                    </h1>
+                    <p class="text-xl text-slate-600 font-light max-w-lg mx-auto md:mx-0 leading-relaxed">
+                        I'm <strong class="text-slate-900 font-medium">Kojrey</strong>. I bridge the gap between finance and technology, building robust software with a background in precision.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start pt-4">
+                        <a href="#projects" class="px-8 py-3.5 rounded-full bg-slate-900 text-white font-medium hover:bg-slate-800 transition-all shadow-lg shadow-slate-200">
+                            View Work
+                        </a>
+                        <a href="#contact" class="px-8 py-3.5 rounded-full border border-slate-200 text-slate-600 hover:border-slate-400 hover:text-slate-900 transition-all bg-white">
+                            Contact Me
+                        </a>
+                    </div>
+                </div>
+                <div class="order-1 md:order-2 flex justify-center relative fade-in" style="animation-delay: 0.2s;">
+                    <div class="relative w-64 h-64 md:w-96 md:h-96 float-animation">
+                         <!-- Abstract shape instead of glow -->
+                        <div class="absolute inset-0 bg-slate-100 rounded-full scale-90 -z-10"></div>
+                        <img src="img/kojrey-memoji.png" alt="Kojrey Memoji" class="relative z-10 w-full h-full object-contain grayscale hover:grayscale-0 transition-all duration-700">
+                    </div>
+                </div>
             </div>
         </section>
 
-    </section>
+        <!-- Projects Section -->
+        <section id="projects" class="py-32 bg-bg-alt">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="mb-20">
+                    <h2 class="text-3xl md:text-4xl font-display font-bold text-slate-900 mb-6">Selected Projects</h2>
+                    <p class="text-slate-500 max-w-2xl font-light text-lg">A collection of work demonstrating my transition into software engineering.</p>
+                </div>
 
-    <footer class="footer">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Project Card 1 -->
+                    <div class="group bg-white rounded-xl overflow-hidden border border-slate-100 hover:border-slate-300 transition-all duration-300 hover:shadow-xl hover:shadow-slate-100/50">
+                        <div class="h-64 bg-slate-50 flex items-center justify-center group-hover:bg-slate-100 transition-colors">
+                            <i class="fas fa-code text-3xl text-slate-300 group-hover:text-slate-500 transition-colors"></i>
+                        </div>
+                        <div class="p-8">
+                            <div class="flex justify-between items-start mb-4">
+                                <h4 class="text-xl font-bold text-slate-900">Project Name</h4>
+                                <span class="px-3 py-1 bg-slate-100 text-slate-600 text-xs font-medium rounded-full">Coming Soon</span>
+                            </div>
+                            <p class="text-slate-500 text-sm leading-relaxed mb-6">Currently in development. This project will showcase full-stack capabilities.</p>
+                            <a href="#" class="inline-flex items-center text-sm font-semibold text-slate-900 hover:text-brand-accent transition-colors">
+                                View Code <i class="fas fa-arrow-right ml-2 text-xs"></i>
+                            </a>
+                        </div>
+                    </div>
 
-        <p>"We but mirror the world.
-            <br/>All the tendencies present in the outer world are to be found in the world of our body. 
-            <br/>If we could change ourselves, the tendencies in the world would also change. 
-            <br/>As a man changes his own nature, so does the attitude of the world change towards him."</p>
+                    <!-- Project Card 2 -->
+                    <div class="group bg-white rounded-xl overflow-hidden border border-slate-100 hover:border-slate-300 transition-all duration-300 hover:shadow-xl hover:shadow-slate-100/50">
+                        <div class="h-64 bg-slate-50 flex items-center justify-center group-hover:bg-slate-100 transition-colors">
+                            <i class="fas fa-terminal text-3xl text-slate-300 group-hover:text-slate-500 transition-colors"></i>
+                        </div>
+                        <div class="p-8">
+                            <div class="flex justify-between items-start mb-4">
+                                <h4 class="text-xl font-bold text-slate-900">Project Name</h4>
+                                <span class="px-3 py-1 bg-slate-100 text-slate-600 text-xs font-medium rounded-full">Coming Soon</span>
+                            </div>
+                            <p class="text-slate-500 text-sm leading-relaxed mb-6">Currently in development. Focusing on backend logic and efficiency.</p>
+                            <a href="#" class="inline-flex items-center text-sm font-semibold text-slate-900 hover:text-brand-accent transition-colors">
+                                View Code <i class="fas fa-arrow-right ml-2 text-xs"></i>
+                            </a>
+                        </div>
+                    </div>
 
+                    <!-- Project Card 3 -->
+                    <div class="group bg-white rounded-xl overflow-hidden border border-slate-100 hover:border-slate-300 transition-all duration-300 hover:shadow-xl hover:shadow-slate-100/50">
+                        <div class="h-64 bg-slate-50 flex items-center justify-center group-hover:bg-slate-100 transition-colors">
+                            <i class="fas fa-layer-group text-3xl text-slate-300 group-hover:text-slate-500 transition-colors"></i>
+                        </div>
+                        <div class="p-8">
+                            <div class="flex justify-between items-start mb-4">
+                                <h4 class="text-xl font-bold text-slate-900">Project Name</h4>
+                                <span class="px-3 py-1 bg-slate-100 text-slate-600 text-xs font-medium rounded-full">Coming Soon</span>
+                            </div>
+                            <p class="text-slate-500 text-sm leading-relaxed mb-6">Currently in development. Exploring new frameworks and methodologies.</p>
+                            <a href="#" class="inline-flex items-center text-sm font-semibold text-slate-900 hover:text-brand-accent transition-colors">
+                                View Code <i class="fas fa-arrow-right ml-2 text-xs"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-32 bg-white">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-12 items-start">
+                    <div class="md:col-span-4">
+                        <h2 class="text-3xl font-display font-bold text-slate-900 mb-6 sticky top-24">About Me</h2>
+                    </div>
+                    
+                    <div class="md:col-span-8 space-y-8">
+                        <div class="prose prose-slate prose-lg text-slate-600">
+                            <p>
+                                I'm a <span class="text-slate-900 font-semibold">former Qualified Accountant (AIPA) and BAS Agent</span> who traded spreadsheets for IDEs. In 2024, I made a pivotal decision to shut down my accounting & bookkeeping firm and dive headfirst into Software Engineering.
+                            </p>
+                            <p>
+                                Currently, I'm pursuing a <span class="text-brand-accent font-medium">Graduate Diploma in IT at the University of New England (UNE)</span>, building a strong foundation in Computer Science.
+                            </p>
+                        </div>
+
+                        <div class="pt-8 border-t border-slate-100">
+                            <h4 class="text-sm font-bold text-slate-900 uppercase tracking-wide mb-6">Technical Focus</h4>
+                            <div class="flex flex-wrap gap-3">
+                                <span class="px-4 py-2 bg-slate-50 text-slate-700 border border-slate-200 rounded-lg text-sm font-medium hover:border-slate-300 transition-colors">Python</span>
+                                <span class="px-4 py-2 bg-slate-50 text-slate-700 border border-slate-200 rounded-lg text-sm font-medium hover:border-slate-300 transition-colors">Java</span>
+                                <span class="px-4 py-2 bg-slate-50 text-slate-700 border border-slate-200 rounded-lg text-sm font-medium hover:border-slate-300 transition-colors">JavaScript</span>
+                                <span class="px-4 py-2 bg-slate-50 text-slate-700 border border-slate-200 rounded-lg text-sm font-medium hover:border-slate-300 transition-colors">Solidity</span>
+                                <span class="px-4 py-2 bg-slate-50 text-slate-700 border border-slate-200 rounded-lg text-sm font-medium hover:border-slate-300 transition-colors">Blockchain</span>
+                            </div>
+                        </div>
+
+                        <div class="pt-8 border-t border-slate-100 flex items-center gap-4 text-slate-500 text-sm">
+                            <span><i class="fas fa-map-marker-alt mr-2"></i>Australia 🇦🇺</span>
+                            <span><i class="fas fa-passport mr-2"></i>Dual Citizen (AU/IE)</span>
+                            <span><i class="fas fa-dog mr-2"></i>Dog Dad</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Qualifications Section -->
+        <section id="quals" class="py-32 bg-bg-alt">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-12">
+                    <div class="md:col-span-4">
+                        <h2 class="text-3xl font-display font-bold text-slate-900 mb-6 sticky top-24">Qualifications</h2>
+                    </div>
+
+                    <div class="md:col-span-8 grid grid-cols-1 gap-12">
+                        
+                        <!-- Completed Section -->
+                        <div>
+                            <h3 class="text-lg font-bold text-slate-900 mb-6 uppercase tracking-wide border-b border-slate-200 pb-2">Completed</h3>
+                            
+                            <!-- Tech Education -->
+                            <div class="mb-10">
+                                <h4 class="text-md font-semibold text-brand-accent mb-4 uppercase tracking-wide">Technology</h4>
+                                <div class="space-y-6 border-l border-slate-200 ml-3 pl-8">
+                                    
+                                    <div class="relative">
+                                        <div class="absolute -left-[37px] top-1.5 w-4 h-4 rounded-full bg-white border-4 border-slate-300"></div>
+                                        <h5 class="text-lg font-bold text-slate-900">Cyfrin Updraft: Blockchain Basics</h5>
+                                        <p class="text-slate-500 text-sm">2024</p>
+                                    </div>
+
+                                    <div class="relative">
+                                        <div class="absolute -left-[37px] top-1.5 w-4 h-4 rounded-full bg-white border-4 border-slate-300"></div>
+                                        <h5 class="text-lg font-bold text-slate-900">Chainlink Bootcamp</h5>
+                                        <p class="text-slate-500 text-sm">2024 (April, English)</p>
+                                    </div>
+
+                                    <div class="relative">
+                                        <div class="absolute -left-[37px] top-1.5 w-4 h-4 rounded-full bg-white border-4 border-slate-300"></div>
+                                        <h5 class="text-lg font-bold text-slate-900">Coursera Project: Postman - Intro to APIs</h5>
+                                        <p class="text-slate-500 text-sm">2022 (without coding)</p>
+                                    </div>
+
+                                    <div class="relative">
+                                        <div class="absolute -left-[37px] top-1.5 w-4 h-4 rounded-full bg-white border-4 border-slate-300"></div>
+                                        <h5 class="text-lg font-bold text-slate-900">IBM Blockchain Foundation for Developers</h5>
+                                        <p class="text-slate-500 text-sm">2018 (Coursera)</p>
+                                    </div>
+
+                                    <div class="relative">
+                                        <div class="absolute -left-[37px] top-1.5 w-4 h-4 rounded-full bg-white border-4 border-slate-300"></div>
+                                        <h5 class="text-lg font-bold text-slate-900">UTS: Programming Fundamentals</h5>
+                                        <p class="text-slate-500 text-sm">2014 (Autumn, 48023)</p>
+                                    </div>
+
+                                    <div class="relative">
+                                        <div class="absolute -left-[37px] top-1.5 w-4 h-4 rounded-full bg-white border-4 border-slate-300"></div>
+                                        <h5 class="text-lg font-bold text-slate-900">UTS: Networking Essentials</h5>
+                                        <p class="text-slate-500 text-sm">2009 (Autumn, 31270)</p>
+                                    </div>
+
+                                    <div class="relative">
+                                        <div class="absolute -left-[37px] top-1.5 w-4 h-4 rounded-full bg-white border-4 border-slate-300"></div>
+                                        <h5 class="text-lg font-bold text-slate-900">UTS: Database Fundamentals</h5>
+                                        <p class="text-slate-500 text-sm">2008 (Spring, 31271)</p>
+                                    </div>
+
+                                    <div class="relative">
+                                        <div class="absolute -left-[37px] top-1.5 w-4 h-4 rounded-full bg-white border-4 border-slate-300"></div>
+                                        <h5 class="text-lg font-bold text-slate-900">UTS: Communication for IT Professionals</h5>
+                                        <p class="text-slate-500 text-sm">2007 (Autumn, 31265)</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Other Education -->
+                            <div>
+                                <h4 class="text-md font-semibold text-brand-secondary mb-4 uppercase tracking-wide">Other</h4>
+                                <div class="space-y-6 border-l border-slate-200 ml-3 pl-8">
+                                    
+                                    <div class="relative">
+                                        <div class="absolute -left-[37px] top-1.5 w-4 h-4 rounded-full bg-white border-4 border-slate-300"></div>
+                                        <h5 class="text-lg font-bold text-slate-900">Certified Xero Advisor</h5>
+                                        <p class="text-slate-500 text-sm">2020</p>
+                                    </div>
+
+                                    <div class="relative">
+                                        <div class="absolute -left-[37px] top-1.5 w-4 h-4 rounded-full bg-white border-4 border-slate-300"></div>
+                                        <h5 class="text-lg font-bold text-slate-900">Certified Quickbooks Online ProAdvisor</h5>
+                                        <p class="text-slate-500 text-sm">2020 (Advanced)</p>
+                                    </div>
+
+                                    <div class="relative">
+                                        <div class="absolute -left-[37px] top-1.5 w-4 h-4 rounded-full bg-white border-4 border-slate-300"></div>
+                                        <h5 class="text-lg font-bold text-slate-900">Registered BAS Agent</h5>
+                                        <p class="text-slate-500 text-sm">2020 (Tax Practitioners Board)</p>
+                                    </div>
+
+                                    <div class="relative">
+                                        <div class="absolute -left-[37px] top-1.5 w-4 h-4 rounded-full bg-white border-4 border-slate-300"></div>
+                                        <h5 class="text-lg font-bold text-slate-900">RG146 CFA Gap Program</h5>
+                                        <p class="text-slate-500 text-sm">2020 (Financial Education Professional)</p>
+                                        <p class="text-slate-600 text-sm mt-1">Securities, Derivatives, Managed Investments, Foreign Exchange</p>
+                                    </div>
+
+                                    <div class="relative">
+                                        <div class="absolute -left-[37px] top-1.5 w-4 h-4 rounded-full bg-white border-4 border-slate-300"></div>
+                                        <h5 class="text-lg font-bold text-slate-900">CFA Level 1 Exam</h5>
+                                        <p class="text-slate-500 text-sm">2018 (Passed >90th percentile)</p>
+                                        <p class="text-slate-600 text-sm mt-1">Portfolio Management, Alternative Investments & Derivatives</p>
+                                    </div>
+
+                                    <div class="relative">
+                                        <div class="absolute -left-[37px] top-1.5 w-4 h-4 rounded-full bg-white border-4 border-slate-300"></div>
+                                        <h5 class="text-lg font-bold text-slate-900">Graduate Certificate in Financial Planning</h5>
+                                        <p class="text-slate-500 text-sm">2018 (Kaplan Professional)</p>
+                                        <p class="text-slate-600 text-sm mt-1">Generic Knowledge, Financial Planning, Superannuation, Insurance</p>
+                                    </div>
+
+                                    <div class="relative">
+                                        <div class="absolute -left-[37px] top-1.5 w-4 h-4 rounded-full bg-white border-4 border-slate-300"></div>
+                                        <h5 class="text-lg font-bold text-slate-900">Bachelor of Business</h5>
+                                        <p class="text-slate-500 text-sm">2016 (UTS - Distinction)</p>
+                                        <p class="text-slate-600 text-sm mt-1">Accounting major, IT sub-major</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- In Progress Section -->
+                        <div>
+                            <h3 class="text-lg font-bold text-slate-900 mb-6 uppercase tracking-wide border-b border-slate-200 pb-2">In Progress</h3>
+                            
+                             <!-- Tech Education -->
+                             <div class="mb-10">
+                                <h4 class="text-md font-semibold text-brand-accent mb-4 uppercase tracking-wide">Technology</h4>
+                                <div class="space-y-6 border-l border-slate-200 ml-3 pl-8">
+                                    <div class="relative">
+                                        <div class="absolute -left-[37px] top-1.5 w-4 h-4 rounded-full bg-white border-4 border-brand-accent"></div>
+                                        <h5 class="text-lg font-bold text-slate-900">Graduate Diploma in Information Technology</h5>
+                                        <p class="text-slate-500 text-sm">2024 - Present (University of New England)</p>
+                                        <ul class="list-disc list-inside text-slate-600 text-sm mt-2 space-y-1">
+                                            <li>Introduction to Programming and the UNIX Environment (Trimester 2, COSC110)</li>
+                                            <li>Object Oriented Programming (Trimester 2, COSC120)</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Other Education -->
+                             <div>
+                                <h4 class="text-md font-semibold text-brand-secondary mb-4 uppercase tracking-wide">Other</h4>
+                                <div class="space-y-6 border-l border-slate-200 ml-3 pl-8">
+                                    <div class="relative">
+                                        <div class="absolute -left-[37px] top-1.5 w-4 h-4 rounded-full bg-white border-4 border-slate-200"></div>
+                                        <h5 class="text-lg font-bold text-slate-400">None</h5>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-32 bg-white">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-4xl font-display font-bold text-slate-900 mb-8">Get in Touch</h2>
+                <p class="text-xl text-slate-500 font-light mb-12">Open to new opportunities in software engineering.</p>
+
+                <div class="flex flex-wrap justify-center gap-6 mb-16">
+                    <a href="https://github.com/axel-t81" target="_blank" class="flex items-center gap-3 px-6 py-3 bg-slate-50 border border-slate-200 rounded-xl text-slate-700 hover:border-slate-400 hover:text-slate-900 transition-all">
+                        <i class="fab fa-github text-xl"></i> GitHub
+                    </a>
+                    <a href="https://www.linkedin.com/in/axeltracy" target="_blank" class="flex items-center gap-3 px-6 py-3 bg-slate-50 border border-slate-200 rounded-xl text-slate-700 hover:border-[#0077b5] hover:text-[#0077b5] transition-all">
+                        <i class="fab fa-linkedin-in text-xl"></i> LinkedIn
+                    </a>
+                    <a href="https://x.com/kojrey_codes" target="_blank" class="flex items-center gap-3 px-6 py-3 bg-slate-50 border border-slate-200 rounded-xl text-slate-700 hover:border-black hover:text-black transition-all">
+                        <i class="fa-brands fa-x-twitter text-xl"></i> X
+                    </a>
+                    <a href="https://huggingface.co/kojrey" target="_blank" class="flex items-center gap-3 px-6 py-3 bg-slate-50 border border-slate-200 rounded-xl text-slate-700 hover:border-[#FFD21E] hover:text-[#FFD21E] transition-all">
+                        <span>🤗</span> HuggingFace
+                    </a>
+                </div>
+
+                <div class="bg-slate-50 rounded-2xl border border-slate-100 p-2 max-w-2xl mx-auto shadow-inner">
+                    <div class="calendly-inline-widget w-full h-[600px]" data-url="https://calendly.com/kojrey-kojreycodes/30min?hide_event_type_details=1&hide_gdpr_banner=1"></div>
+                    <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-white py-12 border-t border-slate-100">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <p class="text-slate-400 text-sm">
+                &copy; 2026 Kojrey. Minimalist.
+            </p>
+        </div>
     </footer>
 
-</main>
+    <script>
+        // Smooth scroll and mobile menu
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
 </body>
 </html>
